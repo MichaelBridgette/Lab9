@@ -13,10 +13,11 @@
 #include<GL\GLU.h>
 #include "Vector3.h"
 #include "Matrix3.h"
+#include<sstream>
 
 using namespace std;
 using namespace sf;
-using namespace gpp;
+//using namespace gpp;
 
 class Game
 {
@@ -36,6 +37,35 @@ private:
 	Time elapsed;
 
 	float rotationAngle = 0.0f;
+
+
+	Matrix3 m1 = Matrix3().RotationZ(0.01);
+
+	
+	MyVector3 v1 = MyVector3(-0.5f,
+	-0.5f,
+	0.0f);
+	MyVector3 v2 = MyVector3(-0.5f,
+	0.5f,
+	0.0f);
+	MyVector3 v3 = MyVector3(0.5f,
+	0.5f,
+	0.0f);
+	MyVector3 v4 = MyVector3(0.5f,
+	-0.5f,
+	0.5f);
+	MyVector3 v5 = MyVector3(-0.5f,
+	-0.5f,
+	-0.5f);
+	MyVector3 v6 = MyVector3(-0.5f,
+	0.5f,
+	-0.5f);
+	MyVector3 v7 = MyVector3(0.5f,
+		0.5f,
+		-0.5f);
+	MyVector3 v8 = MyVector3(0.5f,
+	-0.5f,
+	-0.5f);
 };
 
 #endif

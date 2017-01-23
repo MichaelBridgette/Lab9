@@ -82,37 +82,38 @@ void Game::initialize()
 
 
 	/* Vertices counter-clockwise winding */
-	vertex[0].coordinate[0] = -0.5f;
-	vertex[0].coordinate[1] = -0.5f;
-	vertex[0].coordinate[2] = 0.0f;
+	vertex[0].coordinate[0] = v1.GetXf();
+	vertex[0].coordinate[1] = v1.GetYf();
+	vertex[0].coordinate[2] = v1.GetZf();
 
-	vertex[1].coordinate[0] = -0.5f;
-	vertex[1].coordinate[1] = 0.5f;
-	vertex[1].coordinate[2] = 0.0f;
+	vertex[1].coordinate[0] = v2.GetXf();
+	vertex[1].coordinate[1] = v2.GetYf();
+	vertex[1].coordinate[2] = v2.GetZf();
 
-	vertex[2].coordinate[0] = 0.5f;
-	vertex[2].coordinate[1] = 0.5f;
-	vertex[2].coordinate[2] = 0.0f;
+	vertex[2].coordinate[0] = v3.GetXf();
+	vertex[2].coordinate[1] = v3.GetYf();
+	vertex[2].coordinate[2] = v3.GetZf();
 
-	vertex[3].coordinate[0] = 0.5f;
-	vertex[3].coordinate[1] = -0.5f;
-	vertex[3].coordinate[2] = 0.5f;
+	vertex[3].coordinate[0] = v4.GetXf();
+	vertex[3].coordinate[1] = v4.GetYf();
+	vertex[3].coordinate[2] = v4.GetZf();
 
-	vertex[4].coordinate[0] = -0.5f;
-	vertex[4].coordinate[1] = -0.5f;
-	vertex[4].coordinate[2] = -0.5f;
+	vertex[4].coordinate[0] = v5.GetXf();
+	vertex[4].coordinate[1] = v5.GetYf();
+	vertex[4].coordinate[2] = v5.GetZf();
 
-	vertex[5].coordinate[0] = -0.5f;
-	vertex[5].coordinate[1] = 0.5f;
-	vertex[5].coordinate[2] = -0.5f;
+	vertex[5].coordinate[0] = v6.GetXf();
+	vertex[5].coordinate[1] = v6.GetYf();
+	vertex[5].coordinate[2] = v6.GetZf();
 
-	vertex[6].coordinate[0] = 0.5f;
-	vertex[6].coordinate[1] = 0.5f;
-	vertex[6].coordinate[2] = -0.5f;
+	vertex[6].coordinate[0] = v7.GetXf();
+	vertex[6].coordinate[1] = v7.GetYf();
+	vertex[6].coordinate[2] = v7.GetZf();
 
-	vertex[7].coordinate[0] = 0.5f;
-	vertex[7].coordinate[1] = -0.5f;
-	vertex[7].coordinate[2] = -0.5f;
+	vertex[7].coordinate[0] = v8.GetXf();
+	vertex[7].coordinate[1] = v8.GetYf();
+	vertex[7].coordinate[2] = v8.GetZf();
+
 
 	vertex[0].color[0] = 0.0f;
 	vertex[0].color[1] = 0.0f;
@@ -201,22 +202,13 @@ void Game::initialize()
 
 
 	ifstream inFile;
-	std::string myString;
 	std::string theString;
+	std::stringstream finalOutput;
 	inFile.open("myFile.txt");
 
-	while (!inFile.eof())
-	{
-		std::getline(inFile, myString);
-		theString += myString;
-	}
+	finalOutput << inFile.rdbuf();
 	inFile.close();
-	
-	cout << theString;
-
-
-
-
+	theString = finalOutput.str();
 	const char* vs_src = theString.c_str();
 
 	DEBUG_MSG("Setting Up Vertex Shader");
@@ -239,16 +231,18 @@ void Game::initialize()
 
 	/* Fragment Shader which would normally be loaded from an external file */
 	
-	
-	
+	ifstream inFile2;
+	std::string theString2;
+	std::stringstream finalOutput2;
+	inFile2.open("myFile2.txt");
 
-	const char* fs_src = "#version 400\n\r"
-		"in vec4 color;"
-		"out vec4 fColor;"
-		"void main() {"
-		"	fColor = vec4(1.0f, 0.0f, 1.0f, 1.0f);"
-		"}"; //Fragment Shader Src
+	finalOutput2 << inFile2.rdbuf();
+	inFile2.close();
+	theString2 = finalOutput2.str();
+	const char* fs_src = theString2.c_str();
 
+
+	
 	DEBUG_MSG("Setting Up Fragment Shader");
 
 	fsid = glCreateShader(GL_FRAGMENT_SHADER);
@@ -320,6 +314,50 @@ void Game::update()
 			rotationAngle -= 360.0f;
 		}
 	}
+
+	v1 = m1*v1;
+	v2 = m1*v2;
+	v3 = m1*v3;
+	v4 = m1*v4;
+	v5 = m1*v5;
+	v6 = m1*v6;
+	v7 = m1*v7;
+	v8 = m1*v8;
+
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf()-10);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() - 10);
+
+	vertex[0].coordinate[0] = v1.GetXf();
+	vertex[0].coordinate[1] = v1.GetYf();
+	vertex[0].coordinate[2] = v1.GetZf();
+
+	vertex[1].coordinate[0] = v2.GetXf();
+	vertex[1].coordinate[1] = v2.GetYf();
+	vertex[1].coordinate[2] = v2.GetZf();
+
+	vertex[2].coordinate[0] = v3.GetXf();
+	vertex[2].coordinate[1] = v3.GetYf();
+	vertex[2].coordinate[2] = v3.GetZf();
+
+	vertex[3].coordinate[0] = v4.GetXf();
+	vertex[3].coordinate[1] = v4.GetYf();
+	vertex[3].coordinate[2] = v4.GetZf();
+
+	vertex[4].coordinate[0] = v5.GetX();
+	vertex[4].coordinate[1] = v5.GetY();
+	vertex[4].coordinate[2] = v5.GetZ();
+
+	vertex[5].coordinate[0] = v6.GetX();
+	vertex[5].coordinate[1] = v6.GetY();
+	vertex[5].coordinate[2] = v6.GetZ();
+
+	vertex[6].coordinate[0] = v7.GetX();
+	vertex[6].coordinate[1] = v7.GetY();
+	vertex[6].coordinate[2] = v7.GetZ();
+
+	vertex[7].coordinate[0] = v8.GetX();
+	vertex[7].coordinate[1] = v8.GetY();
+	vertex[7].coordinate[2] = v8.GetZ();
 
 	//Change vertex data
 	/*vertex[0].coordinate[0] += -0.0001f;
