@@ -326,14 +326,14 @@ void Game::update()
 	v7 = m1*v7;
 	v8 = m1*v8;
 													   
-	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() +0.5f);
-	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() +0.5f);
-	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() +0.5f);
-	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() +0.5f);
-	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() +0.5f);
-	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() +0.5f);
-	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() +0.5f);
-	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() +0.5f);
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() +0.2f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() +0.2f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() +0.2f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() +0.2f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() +0.2f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() +0.2f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() +0.2f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() +0.2f);
 	
 
 	vertex[0].coordinate[0] = v1.GetXf();
@@ -370,14 +370,14 @@ void Game::update()
 
 
 														
-	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() -0.5f);
-	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() -0.5f);
-	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() -0.5f);
-	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() -0.5f);
-	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() -0.5f);
-	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() -0.5f);
-	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() -0.5f);
-	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() -0.5f);
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() -0.2f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() -0.2f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() -0.2f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() -0.2f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() -0.2f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() -0.2f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() -0.2f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() -0.2f);
 	
 	v1 = m2*v1;
 	v2 = m2*v2;
@@ -388,14 +388,14 @@ void Game::update()
 	v7 = m2*v7;
 	v8 = m2*v8;
 
-	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() + 0.5f);
-	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() + 0.5f);
-	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() + 0.5f);
-	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() + 0.5f);
-	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() + 0.5f);
-	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() + 0.5f);
-	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() + 0.5f);
-	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() + 0.5f);
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() + 0.2f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() + 0.2f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() + 0.2f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() + 0.2f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() + 0.2f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() + 0.2f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() + 0.2f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() + 0.2f);
 
 
 	vertex[0].coordinate[0] = v1.GetXf();
@@ -432,14 +432,14 @@ void Game::update()
 
 
 
-	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() - 0.5f);
-	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() - 0.5f);
-	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() - 0.5f);
-	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() - 0.5f);
-	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() - 0.5f);
-	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() - 0.5f);
-	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() - 0.5f);
-	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() - 0.5f);
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() - 0.2f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() - 0.2f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() - 0.2f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() - 0.2f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() - 0.2f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() - 0.2f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() - 0.2f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() - 0.2f);
 
 
 
