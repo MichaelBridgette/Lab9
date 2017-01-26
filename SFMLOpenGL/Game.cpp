@@ -65,6 +65,8 @@ void Game::initialize()
 	glewInit();
 
 	
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_FRONT);
 	
 
 
@@ -115,45 +117,45 @@ void Game::initialize()
 	vertex[7].coordinate[2] = v8.GetZf();
 
 
-	vertex[0].color[0] = 0.0f;
+	vertex[0].color[0] = 1.0f;
 	vertex[0].color[1] = 0.0f;
 	vertex[0].color[2] = 0.0f;
-	vertex[0].color[3] = 1.0f;
+	vertex[0].color[3] = 0.0f;
 
 	vertex[1].color[0] = 0.0f;
-	vertex[1].color[1] = 0.0f;
+	vertex[1].color[1] = 1.0f;
 	vertex[1].color[2] = 0.0f;
-	vertex[1].color[3] = 1.0f;
+	vertex[1].color[3] = 0.0f;
 
 	vertex[2].color[0] = 0.0f;
 	vertex[2].color[1] = 0.0f;
-	vertex[2].color[2] = 0.0f;
-	vertex[2].color[3] = 1.0f;
+	vertex[2].color[2] = 1.0f;
+	vertex[2].color[3] = 0.0f;
 
 	vertex[3].color[0] = 0.0f;
 	vertex[3].color[1] = 0.0f;
 	vertex[3].color[2] = 0.0f;
 	vertex[3].color[3] = 1.0f;
 
-	vertex[4].color[0] = 0.0f;
-	vertex[4].color[1] = 0.0f;
+	vertex[4].color[0] = 1.0f;
+	vertex[4].color[1] = 1.0f;
 	vertex[4].color[2] = 0.0f;
-	vertex[4].color[3] = 1.0f;
+	vertex[4].color[3] = 0.0f;
 
-	vertex[5].color[0] = 0.0f;
+	vertex[5].color[0] = 1.0f;
 	vertex[5].color[1] = 0.0f;
-	vertex[5].color[2] = 0.0f;
-	vertex[5].color[3] = 1.0f;
+	vertex[5].color[2] = 1.0f;
+	vertex[5].color[3] = 0.0f;
 
-	vertex[6].color[0] = 0.0f;
+	vertex[6].color[0] = 1.0f;
 	vertex[6].color[1] = 0.0f;
 	vertex[6].color[2] = 0.0f;
 	vertex[6].color[3] = 1.0f;
 
-	vertex[7].color[0] = 0.0f;
-	vertex[7].color[1] = 0.0f;
-	vertex[7].color[2] = 0.0f;
-	vertex[7].color[3] = 1.0f;
+	vertex[7].color[0] = 1.0f;
+	vertex[7].color[1] = 1.0f;
+	vertex[7].color[2] = 1.0f;
+	vertex[7].color[3] = 0.0f;
 
 	
 
@@ -163,25 +165,25 @@ void Game::initialize()
 
 	triangles[3] = 0;   triangles[4] = 2;   triangles[5] = 3;
 
-	triangles[6] = 1;   triangles[7] = 5;   triangles[8] = 6;
+	triangles[6] = 3;   triangles[7] = 2;   triangles[8] = 6;
 
-	triangles[9] = 1;   triangles[10] = 2;   triangles[11] = 6;
+	triangles[9] = 3;   triangles[10] = 6;   triangles[11] = 7;
 
-	triangles[12] = 3;   triangles[13] = 2;   triangles[14] = 6;
+	triangles[12] = 7;   triangles[13] = 6;   triangles[14] = 5;
 
-	triangles[15] = 3;   triangles[16] = 7;   triangles[17] = 6;
+	triangles[15] = 7;   triangles[16] = 5;   triangles[17] = 4;
 
-	triangles[18] = 0;   triangles[19] = 1;   triangles[20] = 5;
+	triangles[18] = 4;   triangles[19] = 5;   triangles[20] = 1;
 
-	triangles[21] = 0;   triangles[22] = 4;   triangles[23] = 5;
+	triangles[21] = 4;   triangles[22] = 1;   triangles[23] = 0;
 
-	triangles[24] = 4;   triangles[25] = 7;   triangles[26] = 6;
+	triangles[24] = 1;   triangles[25] = 5;   triangles[26] = 6;
 
-	triangles[27] = 4;   triangles[28] = 5;   triangles[29] = 6;
+	triangles[27] = 1;   triangles[28] = 6;   triangles[29] = 2;
 
-	triangles[30] = 0;   triangles[31] = 4;   triangles[32] = 7;
+	triangles[30] = 4;   triangles[31] = 0;   triangles[32] = 3;
 
-	triangles[33] = 0;   triangles[34] = 3;   triangles[35] = 7;
+	triangles[33] = 4;   triangles[34] = 3;   triangles[35] = 7;
 
 	/* Create a new VBO using VBO id */
 	glGenBuffers(1, vbo);
@@ -323,9 +325,16 @@ void Game::update()
 	v6 = m1*v6;
 	v7 = m1*v7;
 	v8 = m1*v8;
-
-	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf()-10);
-	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() - 10);
+													   
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() +0.5f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() +0.5f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() +0.5f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() +0.5f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() +0.5f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() +0.5f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() +0.5f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() +0.5f);
+	
 
 	vertex[0].coordinate[0] = v1.GetXf();
 	vertex[0].coordinate[1] = v1.GetYf();
@@ -359,30 +368,82 @@ void Game::update()
 	vertex[7].coordinate[1] = v8.GetY();
 	vertex[7].coordinate[2] = v8.GetZ();
 
-	//Change vertex data
-	/*vertex[0].coordinate[0] += -0.0001f;
-	vertex[0].coordinate[1] += -0.0001f;
-	vertex[0].coordinate[2] += -0.0001f;
 
-	vertex[1].coordinate[0] += -0.0001f;
-	vertex[1].coordinate[1] += -0.0001f;
-	vertex[1].coordinate[2] += -0.0001f;
+														
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() -0.5f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() -0.5f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() -0.5f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() -0.5f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() -0.5f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() -0.5f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() -0.5f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() -0.5f);
+	
+	v1 = m2*v1;
+	v2 = m2*v2;
+	v3 = m2*v3;
+	v4 = m2*v4;
+	v5 = m2*v5;
+	v6 = m2*v6;
+	v7 = m2*v7;
+	v8 = m2*v8;
 
-	vertex[2].coordinate[0] += -0.0001f;
-	vertex[2].coordinate[1] += -0.0001f;
-	vertex[2].coordinate[2] += -0.0001f;
-*/
-	//vertex[3].coordinate[0] += -0.0001f;
-	//vertex[3].coordinate[1] += -0.0001f;
-	//vertex[3].coordinate[2] += -0.0001f;
-	//	   
-	//vertex[4].coordinate[0] += -0.0001f;
-	//vertex[4].coordinate[1] += -0.0001f;
-	//vertex[4].coordinate[2] += -0.0001f;
-	//	   
-	//vertex[5].coordinate[0] += -0.0001f;
-	//vertex[5].coordinate[1] += -0.0001f;
-	//vertex[5].coordinate[2] += -0.0001f;
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() + 0.5f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() + 0.5f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() + 0.5f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() + 0.5f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() + 0.5f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() + 0.5f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() + 0.5f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() + 0.5f);
+
+
+	vertex[0].coordinate[0] = v1.GetXf();
+	vertex[0].coordinate[1] = v1.GetYf();
+	vertex[0].coordinate[2] = v1.GetZf();
+
+	vertex[1].coordinate[0] = v2.GetXf();
+	vertex[1].coordinate[1] = v2.GetYf();
+	vertex[1].coordinate[2] = v2.GetZf();
+
+	vertex[2].coordinate[0] = v3.GetXf();
+	vertex[2].coordinate[1] = v3.GetYf();
+	vertex[2].coordinate[2] = v3.GetZf();
+
+	vertex[3].coordinate[0] = v4.GetXf();
+	vertex[3].coordinate[1] = v4.GetYf();
+	vertex[3].coordinate[2] = v4.GetZf();
+
+	vertex[4].coordinate[0] = v5.GetX();
+	vertex[4].coordinate[1] = v5.GetY();
+	vertex[4].coordinate[2] = v5.GetZ();
+
+	vertex[5].coordinate[0] = v6.GetX();
+	vertex[5].coordinate[1] = v6.GetY();
+	vertex[5].coordinate[2] = v6.GetZ();
+
+	vertex[6].coordinate[0] = v7.GetX();
+	vertex[6].coordinate[1] = v7.GetY();
+	vertex[6].coordinate[2] = v7.GetZ();
+
+	vertex[7].coordinate[0] = v8.GetX();
+	vertex[7].coordinate[1] = v8.GetY();
+	vertex[7].coordinate[2] = v8.GetZ();
+
+
+
+	v1 = MyVector3(v1.GetXf(), v1.GetYf(), v1.GetZf() - 0.5f);
+	v2 = MyVector3(v2.GetXf(), v2.GetYf(), v2.GetZf() - 0.5f);
+	v3 = MyVector3(v3.GetXf(), v3.GetYf(), v3.GetZf() - 0.5f);
+	v4 = MyVector3(v4.GetXf(), v4.GetYf(), v4.GetZf() - 0.5f);
+	v5 = MyVector3(v5.GetXf(), v5.GetYf(), v5.GetZf() - 0.5f);
+	v6 = MyVector3(v6.GetXf(), v6.GetYf(), v6.GetZf() - 0.5f);
+	v7 = MyVector3(v7.GetXf(), v7.GetYf(), v7.GetZf() - 0.5f);
+	v8 = MyVector3(v8.GetXf(), v8.GetYf(), v8.GetZf() - 0.5f);
+
+
+
+
 
 #if (DEBUG >= 2)
 	DEBUG_MSG("Update up...");
@@ -419,9 +480,11 @@ void Game::render()
 	//Enable Arrays
 	glEnableVertexAttribArray(positionID);
 	glEnableVertexAttribArray(colorID);
-
+	
+	
+	
 	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_BYTE, (char*)NULL + 0);
-
+	//glCullFace(GL_BACK);
 	window.display();
 
 }
